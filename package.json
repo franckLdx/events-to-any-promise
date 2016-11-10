@@ -1,0 +1,31 @@
+{
+  "name": "events-to-any-promise",
+  "version": "1.0.0",
+  "description": "Create a promise waiting for events to be resolve/reject. Uses any-promise to create the promise",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franckLdx/events-to-any-promise.git"
+  },
+  "keywords": [
+    "events",
+    "promise"
+  ],
+  "author": "FranckLdx (https://github.com/franckLdx)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/franckLdx/events-to-any-promise/issues"
+  },
+  "homepage": "https://github.com/franckLdx/events-to-any-promise#readme",
+  "dependencies": {
+    "any-promise": "^1.3.0"
+  },
+  "devDependencies": {
+    "bluebird": "^3.4.6",
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
+  }
+}
