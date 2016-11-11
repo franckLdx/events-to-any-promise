@@ -1,7 +1,5 @@
 # event-to-any-promise
 
-__Currently in beta. Will be release soon.__
-
 > Create a promise waiting for events to be resolve/reject. Uses any-promise to create the promise
 
 ## Install
