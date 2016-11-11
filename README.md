@@ -84,5 +84,12 @@ The name of the success event
 **errorEvent**
 The name of the error event. Optional, by default: 'error'.
 
+### Promise
+The promise is build using [any-promise](https://www.npmjs.com/package/any-promise),
+therefore it can be used with any Promise implementation.
+
+## Restrictions:
+Requires Node 6.0.0 or upper.
+
 ## License
 MIT

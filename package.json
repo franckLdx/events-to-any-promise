@@ -3,18 +3,25 @@
   "version": "1.0.0",
   "description": "Create a promise waiting for events to be resolve/reject. Uses any-promise to create the promise",
   "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/franckLdx/events-to-any-promise.git"
+  },
+  "scripts" : {
+    "test": "node_modules/.bin/gulp",
+    "lint": "node_modules/.bin/gulp lint"
   },
   "keywords": [
     "events",
     "promise"
   ],
   "author": "FranckLdx (https://github.com/franckLdx)",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/franckLdx/grunt-swapi2json/blob/master/LICENSE-MIT"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/franckLdx/events-to-any-promise/issues"
@@ -37,5 +44,12 @@
     "gulp-load-plugins": "^1.4.0",
     "gulp-mocha": "^3.0.1",
     "mocha": "^3.1.2"
-  }
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "files": [
+    "index.js",
+    "LICENSE"
+  ]
 }
