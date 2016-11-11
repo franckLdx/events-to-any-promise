@@ -6,12 +6,12 @@ __Currently in beta. Will be release soon.__
 
 ## Install
 ```
-npm install --save event-to-any-promise
+npm install --save events-to-any-promise
 ```
-**_You must ahve any-promise 1.x in your dependencies._**
+**_You must have any-promise 1.x in your dependencies._**
 
 ## Example
-Using a pomise to start Node Http Server:
+Using a promise to start Node Http Server:
 ```
 'use strict';
 
