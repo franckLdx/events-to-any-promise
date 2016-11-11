@@ -1,11 +1,14 @@
 # event-to-any-promise
 
+__Currently in beta. Will be release soon.__
+
 > Create a promise waiting for events to be resolve/reject. Uses any-promise to create the promise
 
 ## Install
 ```
 npm install --save event-to-any-promise
 ```
+**_You must ahve any-promise 1.x in your dependencies._**
 
 ## Example
 Using a pomise to start Node Http Server:

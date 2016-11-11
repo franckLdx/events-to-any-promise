@@ -1,12 +1,11 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 const gulp = require('gulp');
-require('gulp-load-plugins')();
 const istanbul = require('gulp-istanbul');
 const mocha = require('gulp-mocha');
 const eslint = require('gulp-eslint');
 
 const src = ['./index.js'];
-const test = ['./test/**/*test.js'];
+const test = ['./test/setUpBluebird.js', './test/**/*test.js'];
 
 gulp.task('lint', () => {
   return gulp.src(src)
