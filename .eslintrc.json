@@ -12,6 +12,8 @@
     "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/test/**/*.js"]}],
     "no-bitwise": ["error", { "allow": ["|"] }],
     "no-underscore-dangle": "off",
-    "strict": "off"
+    "strict": "off",
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }]
   }
 }
