@@ -1,6 +1,6 @@
 {
   "name": "events-to-any-promise",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Create a promise waiting for events to be resolve/reject. Uses any-promise to create the promise",
   "main": "index.js",
   "repository": {
@@ -32,16 +32,17 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "eslint": "^4.18.0",
-    "eslint-config-airbnb": "^16.1.0",
+    "eslint": "5.2.0",
+    "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
     "gulp": "^3.9.1",
-    "gulp-eslint": "^4.0.2",
+    "gulp-eslint": "^5.0.0",
     "gulp-istanbul": "^1.1.3",
-    "gulp-mocha": "^5.0.0",
-    "mocha": "^5.0.1"
+    "gulp-mocha": "^6.0.0",
+    "mocha": "^5.0.1",
+    "yarn": "^1.7.0"
   },
   "engines": {
     "node": ">=6.0.0"
