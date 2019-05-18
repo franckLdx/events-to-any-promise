@@ -3,10 +3,11 @@
 const http = require('http');
 const eventToAnyPromise = require('../index'); // in real life: require('events-to-any-promise');
 
-function initHttpServer(config) {
+async function initHttpServer(config) {
   const server = http.createServer();
   server.listen(config);
-  return eventToAnyPromise(server, 'listening').then(() => server);
+  await eventToAnyPromise(server, 'listening');
+  return server;
 }
 
 /* eslint no-console: "off" */

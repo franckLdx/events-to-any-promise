@@ -16,11 +16,13 @@ Using a promise to start Node Http Server:
 const http = require('http');
 const eventToAnyPromise = require('events-to-any-promise');
 
-function initHttpServer(config) {
+async function initHttpServer(config) {
   const server = http.createServer();
   server.listen(config);
-  return eventToAnyPromise(server, 'listening').then(() => server);
+  await eventToAnyPromise(server, 'listening');
+  return server;
 }
+
 
 initHttpServer({ port: 80 })
   .then((server) => {
@@ -32,32 +34,34 @@ initHttpServer({ port: 80 })
 ```
 
 ## Usage
-Call events-to-any-promise with the success event:
+Call events-to-any-promise to wait for a success event (this throws en error in case of error event):
 ```
 const require('events-to-any-promise');
 const someEventsEmitter = require('./someEventsEmitter');
 
-eventToAnyPromise(someEventsEmitter, 'sucess').then(() => {
+async function doSomething() {
+  await eventToAnyPromise(someEventsEmitter, 'sucess');
   // some stuff
-});
+}
 ```
 When the success event returns a value:
 ```
 const require('events-to-any-promise');
 const someEventsEmitter = require('./someEventsEmitter');
 
-eventToAnyPromise(someEventsEmitter, 'sucess').then((value) => {
-  // some stuff
-});
+async function doSomething() {
+  const result = eventToAnyPromise(someEventsEmitter, 'sucess');
+}
 ```
-When the success event returns multiples values the promise returns an array:
+When the success event delivers multiples values, eventToAnyPromise returns an array:
 ```
 const require('events-to-any-promise');
 const someEventsEmitter = require('./someEventsEmitter');
 
-eventToAnyPromise(someEventsEmitter, 'sucess').then((values) => {
-  // values is an array
-});
+async function doSomething() {
+  const results = await eventToAnyPromise(someEventsEmitter, 'sucess');
+  // results is an array
+}
 ```
 Be default, eventToAnyPromise uses 'error' as error event. To use another event
 as error event, simply pass it as 3rd parameters:
@@ -65,9 +69,10 @@ as error event, simply pass it as 3rd parameters:
 const require('events-to-any-promise');
 const someEventsEmitter = require('./someEventsEmitter');
 
-eventToAnyPromise(someEventsEmitter, 'sucess', 'customErrorEvent').then(() => {
+async function doSomething() {
+  await eventToAnyPromise(someEventsEmitter, 'sucess', 'errorEvent');
   // some stuff
-});
+}
 ```
 
 ## API

@@ -3,15 +3,11 @@
 const Promise = require('any-promise');
 
 function addHandlers(emitter, handlers) {
-  handlers.forEach((handler, event) => {
-    emitter.on(event, handler);
-  });
+  handlers.forEach((handler, event) => emitter.on(event, handler));
 }
 
 function removeHandlers(emitter, handlers) {
-  handlers.forEach((handler, event) => {
-    emitter.removeListener(event, handler);
-  });
+  handlers.forEach((handler, event) => emitter.removeListener(event, handler));
 }
 
 module.exports = function eventToAnyPromise(emitter, successEvent, errorEvent = 'error') {
