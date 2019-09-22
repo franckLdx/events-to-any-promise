@@ -1,8 +1,8 @@
 'use strict';
 
-const eventToAnyPromise = require('../index');
 const EventsEmitter = require('events');
 const should = require('chai').should();
+const eventToAnyPromise = require('../index');
 
 /* eslint func-names: "off" */
 /* eslint prefer-arrow-callback: "off" */
@@ -14,6 +14,7 @@ describe('eventToAnyPromise test', function () {
   beforeEach(function () {
     emitter = new EventsEmitter();
   });
+
   afterEach(function () {
     emitter.listenerCount(SUCCESS_EVENT).should.be.deep.equal(0);
     emitter.listenerCount('error').should.be.deep.equal(0);
@@ -57,34 +58,37 @@ describe('eventToAnyPromise test', function () {
       const promise = eventToAnyPromise(emitter, SUCCESS_EVENT);
       setImmediate(() => { emitter.emit('error', ERROR); });
       return promise
-        .then(() => Promise.reject('Should got an error'))
+        .then(() => Promise.reject(new Error('Should got an error')))
         .catch((err) => {
           err.should.be.deep.equal(ERROR);
         });
     });
+
     it('Customs error event', function () {
       const promise = eventToAnyPromise(emitter, SUCCESS_EVENT, ERROR_EVENT);
       setImmediate(() => { emitter.emit(ERROR_EVENT, ERROR); });
       return promise
-        .then(() => Promise.reject('Should got an error'))
+        .then(() => Promise.reject(new Error('Should got an error')))
         .catch((err) => {
           err.should.be.deep.equal(ERROR);
         });
     });
+
     it('Error with no param', function () {
       const promise = eventToAnyPromise(emitter, SUCCESS_EVENT);
       setImmediate(() => { emitter.emit('error'); });
       return promise
-        .then(() => Promise.reject('Should got an error'))
+        .then(() => Promise.reject(new Error('Should got an error')))
         .catch((err) => {
           should.not.exist(err);
         });
     });
+
     it('Customs error event with no param', function () {
       const promise = eventToAnyPromise(emitter, SUCCESS_EVENT, ERROR_EVENT);
       setImmediate(() => { emitter.emit(ERROR_EVENT); });
       return promise
-        .then(() => Promise.reject('Should got an error'))
+        .then(() => Promise.reject(new Error('Should got an error')))
         .catch((err) => {
           should.not.exist(err);
         });

@@ -4,5 +4,5 @@ const eventToAnyPromise = require('../index'); // in real life: require('events-
 const someEventsEmitter = require('./someEventsEmitter');
 
 async function doSomething() {
-  const result = eventToAnyPromise(someEventsEmitter, 'sucess');
+  const result = await eventToAnyPromise(someEventsEmitter, 'sucess');
 }
