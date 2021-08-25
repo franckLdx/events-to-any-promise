@@ -1,6 +1,6 @@
 {
   "name": "events-to-any-promise",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Create a promise waiting for events to be resolve/reject. Uses any-promise to create the promise",
   "main": "index.js",
   "repository": {
